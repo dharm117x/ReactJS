@@ -23,7 +23,12 @@ export default function TextForms(props) {
             <textarea className='form-control' id='box1' value={text} onChange={toUpdate} rows={8}></textarea>
         </div>
         <button className="btn btn-primary" onClick={toUpper}>To Uppercase</button>
+        <div className="container">
+            <h2>Preview</h2>
+            {text}
+        </div>
     </div>
+
 
   );
 
