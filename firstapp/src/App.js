@@ -1,19 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-import Navbar from './components/Navbar';
-import TextForms from './components/TextForms';
+import "./App.css";
+import About from "./components/About";
+import Navbar from "./components/Navbar";
+import TextForms from "./components/TextForms";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-  
-  <div className="container">
+    <div className="container">
+      <Router>
+        <Navbar page="HomePage" title="ReactJS" />
 
-   <Navbar  page="HomePage"/>
-   <Navbar  page="HomePage" title='ReactJS'/>
-   <TextForms heading="Text box"/>
-   </div>
-    
-   
+        <Routes>
+          <Route path="/" element={<TextForms heading="Text box" />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 
